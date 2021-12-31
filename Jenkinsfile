@@ -1,3 +1,6 @@
+node {
+
+def myfun = load 'testfun.groovy'
 pipeline{
 	agent any
 	environment {
@@ -16,7 +19,7 @@ pipeline{
 		}
 		stage('Push') {
 			steps {
-				sh 'docker push sannket151/nodeapp:latest'
+				sh 'docker push sanket151/nodeapp:latest'
 			}
 		}
 	}
@@ -25,4 +28,5 @@ pipeline{
 			sh 'docker logout'
 		}
 	}
+}
 }
